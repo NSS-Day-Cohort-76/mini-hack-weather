@@ -1,25 +1,31 @@
 // src/App.jsx
 import { useState } from 'react';
+import { getCurrentWeather, getAstronomyData } from './services/dataAccess';
 import { WeatherCard } from './components/WeatherCard';
+import { SkyTracker } from './components/SkyTracker';
+import { RainOverlay } from './components/RainOverlay';
 import { SailorScene } from './components/SailorScene';
 
 export const App = () => {
   const [city, setCity] = useState('');
   const [weather, setWeather] = useState(null);
-  const API_KEY = import.meta.env.VITE_WEATHER_API_KEY;
+  const [astro, setAstro] = useState(null);
 
   const getWeather = async () => {
     try {
-      const res = await fetch(
-        `https://api.weatherapi.com/v1/current.json?key=${API_KEY}&q=${city}&aqi=no`
-      );
-      if (!res.ok) throw new Error('City not found');
-      const data = await res.json();
-      setWeather(data);
+      const weatherData = await getCurrentWeather(city);
+      setWeather(weatherData);
+
+      const astroData = await getAstronomyData(city);
+      setAstro(astroData);
     } catch (err) {
       alert(err.message);
     }
   };
+
+  const isRaining = weather?.current?.condition?.text
+    ?.toLowerCase()
+    .includes('rain');
 
   return (
     <div style={{ textAlign: 'center', padding: '2rem' }}>
@@ -27,14 +33,17 @@ export const App = () => {
 
       <input
         type="text"
+        placeholder="Enter city"
         value={city}
         onChange={(e) => setCity(e.target.value)}
-        placeholder="Enter a city"
       />
       <button onClick={getWeather}>Get Weather</button>
+      {astro && <SkyTracker astro={astro} />}
       {weather && <WeatherCard weather={weather} />}
+
       {weather && <SailorScene windMph={weather.current?.wind_mph} />}
-      
+
+      {isRaining && <RainOverlay />}
     </div>
   );
 };
