@@ -1,0 +1,21 @@
+/* src/components/WeatherCard.css */
+.weather-card {
+  background: linear-gradient(135deg, #0ff 0%, #f0f 100%);
+  border: 2px solid #fff;
+  color: #fff;
+  font-family: 'Press Start 2P', cursive;
+  padding: 1rem;
+  margin-top: 2rem;
+  border-radius: 8px;
+  text-shadow: 0 0 5px #0ff, 0 0 10px #f0f;
+  box-shadow: 0 0 20px #0ff, 0 0 40px #f0f;
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.weather-card img {
+  width: 64px;
+  height: 64px;
+  image-rendering: pixelated;
+}

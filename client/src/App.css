@@ -40,3 +40,23 @@
 .read-the-docs {
   color: #888;
 }
+.arcade-title {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 1.5rem;
+  background: linear-gradient(90deg, #ff00cc, #3333ff, #00ffee);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: glow-flicker 1.5s ease-in-out infinite alternate;
+  text-shadow: 0 0 2px #0ff, 0 0 4px #0ff, 0 0 8px #0ff, 0 0 12px #f0f,
+    0 0 16px #f0f, 0 0 20px #f0f;
+  margin-bottom: 2rem;
+}
+
+@keyframes glow-flicker {
+  0% {
+    text-shadow: 0 0 2px #0ff, 0 0 4px #0ff, 0 0 8px #0ff, 0 0 12px #f0f;
+  }
+  100% {
+    text-shadow: 0 0 4px #0ff, 0 0 8px #0ff, 0 0 16px #f0f, 0 0 24px #f0f;
+  }
+}
