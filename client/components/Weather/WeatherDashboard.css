@@ -1,0 +1,22 @@
+.city-weather-card {
+  background-color: #f4f8ff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin-top: 1rem;
+  padding: 1rem;
+  text-align: center;
+}
+
+.city-weather-card button {
+  margin-top: 0.5rem;
+  background-color: #cc0000;
+  color: white;
+  border: none;
+  padding: 0.4rem 0.8rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.city-weather-card button:hover {
+  background-color: #a30000;
+}

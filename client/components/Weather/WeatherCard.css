@@ -1,0 +1,35 @@
+.weather-card {
+  padding: 1rem;
+  max-width: 350px;
+  margin: 2rem auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  background-color: #ffffff; 
+  color: #333333; 
+  font-family: Arial, sans-serif;
+}
+
+.weather-card h2 {
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.weather-condition {
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: #0077cc; 
+}
+
+.weather-icon {
+  width: 64px;
+  height: 64px;
+}
+
+.weather-loading,
+.weather-error {
+  text-align: center;
+  font-size: 1.1rem;
+  padding: 1rem;
+  color: #444;
+}

@@ -1,0 +1,16 @@
+{
+  "cities": [
+    {
+      "id": 2,
+      "name": "New York"
+    },
+    {
+      "name": "Nashville",
+      "id": 3
+    },
+    {
+      "name": "Lubbock",
+      "id": 5
+    }
+  ]
+}
